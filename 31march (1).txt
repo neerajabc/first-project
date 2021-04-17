@@ -1,0 +1,488 @@
+<!--
+java	class
+object	{ 
+}	==========> json
+let neeraja = {
+	hname : "Ravi",
+	sname : "sunny"
+};
+	neeraja.hname + " " + neeraja.s
+JavaScript Objects :-
+---------------------
+In JavaScript, almost "everything" is an object.
+Booleans can be objects (if defined with the new keyword)
+Numbers can be objects (if defined with the new keyword)
+Strings can be objects (if defined with the new keyword)
+Dates are always objects
+Maths are always objects
+Regular expressions are always objects
+	[a-b]%^			validation part
+Arrays are always objects
+Functions are always objects
+Objects are always objects
+All JavaScript values, except primitives, are objects.
+JavaScript Primitives
+A primitive value is a value that has no properties or methods.
+A primitive data type is data that has a primitive value.
+-->
+<!--
+    1.
+<html>
+    <body>
+        <h2>Java Script Variables</h2>
+        <p id="demo"></p>
+    <script>
+        var person = " \"Eranti Raghava\" ";
+        document.getElementById("demo").innerHTML=person;
+    </script>
+    </body>
+</html>
+-->
+
+<!--
+Objects are variables too. But objects can contain many values.
+The values are written as name : value pairs (name and value separated by a colon).
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : 33,
+                favouriteColor : "green"
+            };
+            document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName + " " + person.age + " " + person.favouriteColor;
+        </script>
+    </body>
+</html>
+Note :-
+        Object Properties
+            The named values, in JavaScript objects, are called properties.
+                Property	Value
+                firstName	John
+                lastName	Doe
+                age		50
+                eyeColor	blue
+                Objects written as name value pairs are similar to:
+-->
+<!--
+    Creating a JavaScript Object
+    With JavaScript, you can define and create your own objects.
+    There are different ways to create new objects:
+    Define and create a single object, using an object literal.
+    Define and create a single object, with the keyword new.
+    Define an object constructor, and then create objects of the constructed type.
+    In ECMAScript 5, an object can also be created with the function Object.create().
+    Using an Object Literal
+    This is the easiest way to create a JavaScript Object.
+    Using an object literal, you both define and create an object in one statement.
+    An object literal is a list of name:value pairs (like age:50) inside curly braces {}.
+    The following example creates a new JavaScript object with four properties:
+    <html>
+    <body>
+        <p>Creating a JavaScript Object.</p>
+        <p id="demo"></p>
+        <script>
+            var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+            document.getElementById("demo").innerHTML =
+            person.firstName + " is " + person.age + " years old.";
+        </script>
+    </body>
+    </html>    
+-->
+<!--
+    
+    Using the JavaScript Keyword new
+    The following example also creates a new JavaScript object with four properties:
+Example
+
+    <html>
+        <body>
+            <p id="demo"></p>
+            <script>
+                var person = new Object();
+                person.firstName = "Eranti";
+                person.lastName = "Raghava";
+                person.age = 34;
+                person.favouriteColor = "green";
+                document.getElementById("demo").innerHTML=person.firstName + " is " + person.age + " years Old.... ";
+            </script>
+        </body>
+    </html>
+-->
+<!--
+    JavaScript Objects are Mutable
+    Objects are mutable: They are addressed by reference, not by value.
+    If person is an object, the following statement will not create a copy of person:
+    var x = person;  // This will not create a copy of person.
+    The object x is not a copy of person. It is person. Both x and person are the same object.Any changes to x will also change person, because x and person are the same object.
+<html>
+    <body>
+        <p>JavaScript objects are Mutable.....</p>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : 34,
+                favouriteColor : "Green"
+            };
+            var x = person;
+            x.age = 30;
+            document.getElementById("demo").innerHTML = person.firstName + " is " + person.age + " years Old... ";
+        </script>
+    </body>
+</html>
+-->
+<!--
+    JavaScript Object Properties
+    Properties are the most important part of any JavaScript object.
+    JavaScript Properties
+    Properties are the values associated with a JavaScript object.
+    A JavaScript object is a collection of unordered properties.
+    Properties can usually be changed, added, and deleted, but some are read only.
+    Accessing JavaScript Properties
+    The syntax for accessing the property of an object is:
+    objectName.property         // person.age
+    or
+    objectName["property"]      // person["age"]
+    or
+    objectName[expression]      // x = "age"; person[x]
+    The expression must evaluate to a property name.
+	<html>
+    <body>
+        <p>There are two different ways to access an object property :</p>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : 34,
+                favouriteColor : "Green"
+            };
+            document.getElementById("demo").innerHTML = person["firstName"] + " is " + person["age"] + " years Old ";
+        </script>
+    </body>
+</html>
+-->
+<!--
+    JavaScript for...in Loop
+    The JavaScript for...in statement loops through the properties of an object.
+Syntax
+    for (variable in object) {
+    // code to be executed
+    }
+    The block of code inside of the for...in loop will be executed once for each property.
+    Looping through the properties of an object:
+    Example
+<html>
+    <body>
+            <p id="demo"></p>
+        <script>
+            var txt = "";
+            var person = {
+                firstName : "Eranit",
+                lastName : "Raghava",
+                age : 34,
+                favouriteColor : "Green"
+            };
+            var x;
+            for(x in person){
+                txt += person[x] + " " + "<br>";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        </script>
+    </body>
+</html>
+-->
+<!--
+    Adding New Properties
+    You can add new properties to an existing object by simply giving it a value.
+    Assume that the person object already exists - you can then give it new properties:
+Example
+
+<html>
+    <body>
+        <h1>JavaScript adding a new properties to existing objects....</h1>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : "33",
+                favouriteColor : "Green"
+            };
+            person.nationality = "Indian";
+            document.getElementById("demo").innerHTML = person.firstName + " is " + person.nationality + " . ";
+        </script>
+    </body>
+</html>
+-->
+<!--
+    Deleting Properties
+    The delete keyword deletes a property from an object:
+    Example
+-->
+<!--
+<html>
+    <body>
+        <h1>You Can Delete Object Properties.....</h1>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : 30,
+                color : "Green"
+            };
+            delete person.age;
+            document.getElementById("demo").innerHTML = person.firstName + " is " + person.age + " years Old....";
+        </script>
+    </body>
+</html>
+Note :-
+    The delete keyword deletes both the value of the property and the property itself.
+    After deletion, the property cannot be used before it is added back again.
+    The delete operator is designed to be used on object properties. It has no effect on variables or functions.
+    The delete operator should not be used on predefined JavaScript object properties. It can crash your application.
+    Property Attributes
+    All properties have a name. In addition they also have a value.
+    The value is one of the property's attributes.
+    Other attributes are: enumerable, configurable, and writable.
+    These attributes define how the property can be accessed (is it readable?, is it writable?)
+    In JavaScript, all attributes can be read, but only the value attribute can be changed (and only if the property is writable).
+    ( ECMAScript 5 has methods for both getting and setting all property attributes)
+-->
+<!--
+    Prototype Properties
+    JavaScript objects inherit the properties of their prototype.
+    The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.
+JavaScript Object Methods :-
+<html>
+    <body>
+        <h2>The JavaScript <i> this </i> Keyword.... </h2>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                age : 34,
+                fullName : function(){
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+            //Display data from the Objects....
+            document.getElementById("demo").innerHTML = person.fullName();
+        </script>
+    </body>
+</html>
+    The this Keyword
+    In a function definition, this refers to the "owner" of the function.
+    In the example above, this is the person object that "owns" the fullName function.
+    In other words, this.firstName means the firstName property of this object.
+    Read more about the this keyword at JS this Keyword.
+    The JavaScript this Keyword
+
+    What is this?
+
+    The JavaScript this keyword refers to the object it belongs to.
+    It has different values depending on where it is used:
+    In a method, this refers to the owner object.
+    Alone, this refers to the global object.
+    In a function, this refers to the global object.
+    In a function, in strict mode, this is undefined.
+    In an event, this refers to the element that received the event.
+    Methods like call(), and apply() can refer this to any object.
+    this in a Method
+    In an object method, this refers to the "owner" of the method.
+    In the example on the top of this page, this refers to the person object.
+    The person object is the owner of the fullName method.
+-->
+<!--
+    this Alone
+    When used alone, the owner is the Global object, so this refers to the Global object.
+    In a browser window the Global object is [object Window]:
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var x = this;
+            document.getElementById("demo").innerHTML = x;
+        </script>
+    </body>
+</html>
+-->
+<!--
+    Pending Topics...
+    In strict mode, when used alone, this also refers to the Global object [object Window]:
+    Example
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+    <p>In this example, <b>this</b> refers to the window Object:</p>
+    <p id="demo"></p>
+    <script>
+    "use strict";
+    var x = this;
+    document.getElementById("demo").innerHTML = x;
+    </script>
+    </body>
+</html>
+this in a Function (Default)
+In a JavaScript function, the owner of the function is the default binding for this.So, in a function, this refers to the Global object [object Window].
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+    <p>In this example, <b>this</b> represents the object that "owns" myFunction:</p>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("demo").innerHTML = myFunction();
+    function myFunction() {
+    return this;
+    }
+    </script>
+    </body>
+    </html>
+    this in a Function (Strict)
+    JavaScript strict mode does not allow default binding.  
+    So, when used in a function, in strict mode, this is undefined.
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The JavaScript <i>this</i> Keyword</h2>
+
+<p>In a function, by default, <b>this</b> refers to the Global object.</p>
+<p>In strict mode, <b>this</b> is <b>undefined</b>, because strict mode does not allow default binding:</p>
+
+<p id="demo"></p>
+
+<script>
+"use strict";
+document.getElementById("demo").innerHTML = myFunction();
+function myFunction() {
+  return this;
+}
+</script>
+</body>
+</html>
+-->
+<!--
+    this in Event Handlers....
+    In Html even Handlers this refers to the HTML element that received the event.
+-->
+<!--
+<html>
+    <body>
+        <button onclick="this.style.display='none'">Click to Remove It....</button>
+    </body>
+</html>
+-->
+<!--
+<html>
+    <body>
+        <h1>Object Method Bindings.....</h1>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                id : 1986,
+                myFunction : function(){
+                    return this;
+                }                
+            };
+                document.getElementById("demo").innerHTML = person.myFunction();
+        </script>
+    </body>
+</html>
+-->
+<!--
+    Explicit Function Binding
+    The call() and apply() methods are predefined JavaScript methods.
+    They can both be used to call an object method with another object as argument.
+    You can read more about call() and apply() later in this tutorial.
+    In the example below, when calling person1.fullName with person2 as argument, this will refer to person2, even if it is a method of person1:
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var person1 = {
+                fullName : function(){
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            var person2 = {
+                firstName : "Eranti",
+                lastName : "Raghava"
+            }
+            var x = person1.fullName.call(person2);
+            document.getElementById("demo").innerHTML = x;
+        </script>
+    </body>
+</html>
+-->
+<!--
+    JavaScript Methods
+    JavaScript methods are actions that can be performed on objects.
+    A JavaScript method is a property containing a function definition.
+    Property	Value
+    firstName	John
+    lastName	Doe
+    age	50
+    eyeColor	blue
+    fullName	function() {return this.firstName + " " + this.lastName;}
+Accessing Object Methods
+    You access an object method with the following syntax:
+    objectName.methodName()
+    You will typically describe fullName() as a method of the person object, and fullName as a property.
+    The fullName property will execute (as a function) when it is invoked with ().
+    This example accesses the fullName() method of a person object:
+Example
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Eranti",
+                lastName : "Raghava",
+                id : 1986
+            };
+            person.name = function(){
+                return this.firstName + " " + this.lastName;
+            };
+            document.getElementById("demo").innerHTML = "My Name is " + person.name();
+
+        </script>
+    </body>
+</html>
+-->
+<!--
+    JavaScript Display Objects
+    How to Display JavaScript Objects?
+    Displaying a JavaScript object will output [object Object].
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                name : "Eranti",
+                age : 30,
+                city : "Bangalore"
+            };
+            document.getElementById("demo").innerHTML = person;
+        </script>
+    </body>
+</html>
+Some common solutions to display JavaScript objects are:
+    Displaying the Object Properties by name
+    Displaying the Object Properties in a Loop
+    Displaying the Object using Object.values()
+    Displaying the Object using JSON.stringify()
+    Displaying Object Properties
+The properties of an object can be displayed as a string:
+-->
